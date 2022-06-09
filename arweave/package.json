@@ -1,0 +1,14 @@
+{
+  "name": "arweave-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "arbundles": "^0.2.7",
+    "arweave": "^1.10.16",
+    "axios": "^0.21.4",
+    "dotenv": "^10.0.0",
+    "web3": "^1.7.3"
+  }
+}
