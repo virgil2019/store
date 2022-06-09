@@ -1,6 +1,7 @@
 # store
 ### Install
 ```
+cd arweave
 yarn 
 ```
 
@@ -11,7 +12,7 @@ node index.js
 
 ### create order
 ```
-node applyStorage.js testdata
+node applyStorage.js orderdata
 ```
 
 ### read data from arweave tx
