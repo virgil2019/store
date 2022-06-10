@@ -32,15 +32,6 @@ cd arweave
 yarn 
 ```
 
-## Config
-```
- set filecoin api token in config.js
-
- export const CONFIG = {
-    token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDI2YTUwNWJDNzIxQTE4N2JiNEJlODEzZTQwNDQxQmNlMTc2Q0VCZUIiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2NTQ3NTEwMjUyNTYsIm5hbWUiOiJkZW1vX3Rva2VuIn0.yRHaAk1D7XLN_0owoKiUeruUz9uYl7jczjZinUB_CZI'
-};
-```
-
 ### run 
 ```
 node index.js
