@@ -10,7 +10,7 @@ const storage = new Web3Storage({ token })
 let provider = new Web3('http://localhost:6791');
 const WALLET_KEY = 'd57bc284266f8bb2ee5ccc8cbe25c6c805e3c2608186ff40c3ce7ccfe9a503ae'
 const WALLET = '0x39d87c0241C2084D3aAA2879Ae9766F3ED75679F'
-const storeAddress = '0xeeA74Cc3565E96d4c420475E93Af603139b35e2a'
+const storeAddress = '0xFfE0e905003a8ecD282447A87cd2B99828006420'
 
 // Get store contract instance
 const contract = new provider.eth.Contract(StoreAbi, storeAddress);
