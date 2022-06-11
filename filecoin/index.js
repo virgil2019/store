@@ -7,10 +7,10 @@ import { CONFIG } from './config.js'
 const token = CONFIG.token
 const storage = new Web3Storage({ token })
 
-let provider = new Web3('https://api.avax-test.network/ext/bc/C/rpc');
+let provider = new Web3('http://localhost:6791');
 const WALLET_KEY = 'd57bc284266f8bb2ee5ccc8cbe25c6c805e3c2608186ff40c3ce7ccfe9a503ae'
 const WALLET = '0x39d87c0241C2084D3aAA2879Ae9766F3ED75679F'
-const storeAddress = '0xD0493460d2CA5D2753E441Aa627437c17caDc887'
+const storeAddress = '0xeeA74Cc3565E96d4c420475E93Af603139b35e2a'
 
 // Get store contract instance
 const contract = new provider.eth.Contract(StoreAbi, storeAddress);
@@ -39,7 +39,7 @@ async function loop() {
             const cid = await storage.put([{ name: `order_${order.orderId}`, stream: () => order.data }])
             console.log('cid', cid)
             const trx = contract.methods.updateOrderArTx(orderId, cid)
-            const gas = await trx.estimateGas({ from: WALLET })
+            const gas = 2000000
             const gasPrice = await provider.eth.getGasPrice()
             const data = trx.encodeABI()
             const nonce = await provider.eth.getTransactionCount(WALLET)
@@ -58,8 +58,9 @@ async function loop() {
                 const receipt = await provider.eth.sendTransaction(transaction)
                 console.log('receipt', receipt)
                 lastOrderId = orderId
+                console.log('You can query at: ', 'https://' + cid + '.ipfs.dweb.link/')
             } catch (error) {
-
+                console.log('error', error);
             }
         }
         await wait(5000);
